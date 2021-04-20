@@ -9,20 +9,22 @@
   <body>
   	<div id="wrapper">
 	    <header>
-	    	<div id="page-banner">
-	    		<h1 class="title">How's the weather today?</h1>
+	    <div id="page-banner">
+	    	<h1 class="title">How's the weather today?</h1>
           <p>Let's find out...</p>
-          <form id="search-books">
+          <form id="search-cities">
             <input type="text" placeholder="Search city..." />
           </form>
-	    	</div>
+	    </div>
 	    </header>
-	    <div id="book-list">
+	    <div id="city-list">
 	    	<h2 class="title">Cities</h2>
 	    	<ul>
 	    		<li>
 	    			<span class="name">Sydney</span>
 	    			<span class="delete">delete</span>
+					<span class="desc"></span>
+					<span class="temp"></span>
 	    		</li>
 	    		<li>
 	    			<span class="name">Melbourne</span>
@@ -38,26 +40,15 @@
 	    		</li>
 	    	</ul>
 	    </div>
-	    <form id="add-book">
+
+	    <form id="add-city">
         <input type="checkbox" id="hide" />
         <label for="hide">Hide all cities</label>
 	    	<input type="text" placeholder="Add a city..." />
 	    	<button>Add</button>
 	    </form>
-      <div id="tabbed-content">
-        <ul class="tabs">
-          <li data-target="#about" class="active">About</li>
-          <li data-target="#contact">Contact</li>
-        </ul>
-        <div class="panel active" id="about">
-          <p>Content for about tab...</p>
-          <p>To view the weather of a city, simply add it in via the add form above.</p>
-        </div>
-        <div class="panel" id="contact">
-          <p>Content for contact tab...</p>
-          <p>Hope you enjoy using this app.</p>
-        </div>
-      </div>
+
+
     </div>
   </body>
 </html>

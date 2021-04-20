@@ -1,5 +1,5 @@
 body{
-    font-family: Tahoma;
+    font-family: Candara;
     color: #444;
     letter-spacing: 1px;
 }
@@ -21,7 +21,7 @@ h1, h2{
 }
 
 #page-banner{
-    background: #eee ;
+    background: rgb(219, 205, 205) ;
     padding: 10px 0;
 
 }
@@ -44,44 +44,48 @@ h1, h2{
     color: #444;
 }
 
-#book-list, #add-book, #tabbed-content{
+#city-list, #add-city{
     margin: 30px;
 }
 
-#book-list ul, #tabbed-content ul{
+#city-list ul{
     list-style-type: none;
     padding: 0;
 }
 
-#book-list li{
+#city-list li{
     padding: 20px;
     border-left: 5px solid #ddd;
     margin: 20px 10px;
 }
 
-#book-list li:hover{
-    border-color: #9361bf;
+#city-list li:hover{
+    border-color: #91160d;
 }
 
 .delete{
     float: right;
-    background: #9361bf;
+    background: #91160d;
     padding: 6px;
     border-radius: 4px;
     cursor: pointer;
     color: white;
 }
 
+.temp{
+    float: center;
+}
+
 .delete:hover{
     background: #333;
 }
 
-#add-book{
+#add-city{
     width: 400px;
     margin: 0 auto;
 }
 
-#add-book input{
+#add-city input{
     display: block;
     margin: 20px 0;
     padding: 10px;
@@ -94,9 +98,9 @@ h1, h2{
     clear: both;
 }
 
-#add-book button{
-    border: 1px solid #9361bf;
-    background: #9361bf;
+#add-city button{
+    border: 1px solid #244af3;
+    background: #244af3;
     padding: 10px 20px;
     font-size: 16px;
     display: inline-block;
@@ -110,36 +114,17 @@ h1, h2{
     color: white;
 }
 
-#add-book:after{
+#add-city:after{
     content: '';
     display: block;
     clear: both;
 }
 
-#add-book #hide{
+#add-city #hide{
   width: 30px;
 }
 
-#add-book label{
+#add-city label{
   line-height: 52px;
 }
 
-#tabbed-content li{
-    display: inline-block;
-    padding: 10px 14px;
-    background: #ddd;
-    border-radius: 4px;
-    cursor: pointer;
-    margin-right: 10px;
-}
-
-#tabbed-content .panel{
-    display: none;
-    border: 1px solid #ddd;
-    padding: 0 10px;
-    border-radius: 4px;
-}
-
-#tabbed-content .panel.active{
-    display: block;
-}
