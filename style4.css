@@ -1,0 +1,159 @@
+body{
+    font-family: Candara;
+    color: #444;
+    letter-spacing: 1px;
+}
+
+h1, h2{
+    font-weight: normal;
+}
+
+#wrapper{
+    width: 90%;
+    max-width: 960px;
+    margin: 20px auto;
+    border-radius: 6px;
+    box-shadow: 0px 1px 6px rgba(0,0,0,0.2);
+    box-sizing: border-box;
+    padding: 0 0 20px;
+    overflow: hidden;
+    border: 1px solid lightgray;
+}
+
+#page-banner{
+    font-family: arial black;
+    background: rgb(221, 134, 134) ;
+    padding: 10px 0;
+
+}
+
+#page-banner h1, #page-banner p{
+    width: 100%;
+    text-align: center;
+    margin: 10px 0;
+}
+
+#page-banner input{
+    font-family: candara;
+    width: 90%;
+    max-width: 300px;
+    margin: 20px auto;
+    display: block;
+    padding: 8px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 16px;
+    color: #444;
+}
+
+
+#city-list, #add-city{
+    margin: 30px;
+}
+
+#city-list ul{
+    list-style-type: none;
+    padding: 0;
+    display: grid;
+}
+
+#city-list li{
+    padding: 10px;
+    border-left: 5px solid #ddd;
+    margin: 5px 10px;
+
+}
+
+#city-list li:hover{
+    border-color: #91160d;
+}
+
+.name{
+    margin-left: 20px;
+    margin-right: 80px;
+    font-weight: bold;
+    font-size: larger;
+    vertical-align: 25px;
+}
+
+.desc{
+    margin-right: 80px;
+    vertical-align:25px;
+    color:darkblue;
+    background-color: darkorange;
+}
+
+.temp{
+    vertical-align: 25px;
+    margin-right: 80px;
+}
+
+.icon{
+    height: 50px;
+    width: 50px;
+}
+
+.delete{
+    float: right;
+    background: #91160d;
+    padding: 6px;
+    border-radius: 4px;
+    cursor: pointer;
+    color: white;
+    vertical-align: 8px;
+}
+
+.delete:hover{
+    background: #333;
+}
+
+#add-city{
+    width: 400px;
+    margin: 0 auto;
+}
+
+#add-city input{
+    font-family: candara;
+    display: block;
+    margin: 20px 0;
+    padding: 8px;
+    border: 1px solid #ccc;
+    font-size: 16px;
+    border-radius: 4px 0 0 4px;
+    box-sizing: border-box;
+    width: 300px;
+    float: left;
+    clear: both;
+}
+
+#add-city button{
+    font-family: candara;
+    border: 1px solid  rgb(221, 134, 134) ;
+    background:  rgb(221, 134, 134) ;
+    padding: 8px 15px;
+    font-size: 16px;
+    display: inline-block;
+    margin: 0;
+    border-radius: 0 4px 4px 0;
+    cursor: pointer;
+    width: 100px;
+    float: left;
+    margin: 20px 0;
+    border-left: 0;
+    color: white;
+}
+
+#add-city:after{
+    content: '';
+    display: block;
+    clear: both;
+}
+
+#add-city #hide{
+  width: 30px;
+}
+
+#add-city label{
+  line-height: 52px;
+}
+
