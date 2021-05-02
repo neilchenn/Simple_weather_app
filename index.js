@@ -16,31 +16,58 @@ document.addEventListener('DOMContentLoaded', function(){
   const addForm = forms['add-city'];
   addForm.addEventListener('submit', function(e){
     e.preventDefault();
-
     // grabbing the value from the 'add-city' form
-    const value = addForm.querySelector('input[type="text"]').value;
+    const value = addForm.querySelector('input[type="text"]').value
+    fetchWeather(value)
+  });
 
+
+function renderWeather (data) {
     // create elements
-    const li = document.createElement('li');
-    const cityName = document.createElement('span');
-    const deleteBtn = document.createElement('span');
+    const li = document.createElement('li')
+    const cityName = document.createElement('span')
+    const desc = document.createElement('span')
+    const temp = document.createElement('span')
+    const icon = document.createElement('img')
+    const deleteBtn = document.createElement('span')
 
     // add text content
-    cityName.textContent = value;
-    deleteBtn.textContent = 'delete';
+    cityName.textContent = data['name']
+    desc.textContent = data['weather'][0]['description']
+    temp.textContent = data['main']['temp'] + '℃'
+    icon.src = `http://openweathermap.org/img/wn/${data['weather'][0]['icon']}@2x.png`
+    deleteBtn.textContent = 'delete'
 
     // add classes (used .classList instead of .className as I can add multiple classes this way)
     // the input in the bracket for .add() is the class name
-    cityName.classList.add('name');
-    deleteBtn.classList.add('delete');
-
-    // append cityName and deleteBtn to li element created
-    li.appendChild(cityName);
-    li.appendChild(deleteBtn);
+    cityName.classList.add('name')
+    desc.classList.add('desc')
+    temp.classList.add('temp')
+    icon.classList.add('icon')
+    deleteBtn.classList.add('delete')
 
     // append li element to the city-list under ul element (#12)
-    list.appendChild(li);
-  });
+    list.appendChild(li)
+
+    // append cityName and deleteBtn to li element created
+    li.appendChild(cityName)
+    li.appendChild(desc)
+    li.appendChild(temp)
+    li.appendChild(icon)    
+    li.appendChild(deleteBtn) 
+}
+
+function fetchWeather (value) {
+  return fetch(`https://api.openweathermap.org/data/2.5/weather?q=${value}&appid=b9a760e0f3fdbfa257d1f712d0767f67&units=metric`)
+    .then(response => response.json())
+    .then(data => {
+      renderWeather(data)
+      return tempValue
+    })
+    .catch((msg) => {
+      msg.textContent = "Please search for a valid city 😩";
+    });
+  }
 
   // hide cities
   const hideBox = document.querySelector('#hide');
@@ -75,8 +102,6 @@ document.addEventListener('DOMContentLoaded', function(){
 
 })
 
-const API_KEY = `a69104e1208044e5877135503212104`;
-const API_URL = `http://api.weatherapi.com/v1/current.json?key=${API_KEY}`
 
 
 
@@ -88,21 +113,3 @@ const API_URL = `http://api.weatherapi.com/v1/current.json?key=${API_KEY}`
 
 
 
-/* add API data
-const desc = document.getElementsByClassName('desc');
-const temp = document.getElementsByClassName('temp');
-
-fetch('https://api.openweathermap.org/data/2.5/weather?q=sydney&appid=b9a760e0f3fdbfa257d1f712d0767f67&units=metric')
-.then(response => response.json())
-.then(data => {
-  let descValue = data['weather'][0]['description'];
-  let tempValue = data['main']['temp'];
-
-  desc.textContent = descValue;
-  temp.textContent = tempValue;
-})
-
-.catch(() => {
-  msg.textContent = "Please search for a valid city 😩";
-});
-*/
